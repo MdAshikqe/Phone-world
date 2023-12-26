@@ -10,7 +10,31 @@
 
 </head>
 <body>
-    <h1>WelCome to Phone World</h1>
+   
+    <h1 class="text-center m-4 ">WelCome to Phone World</h1>
+    <!-- Search Phone Feild -->
+    <div class="mx-auto">
+        <div class="input-group mb-3 w-50 mx-auto ">
+            <input id="phoneField" type="text" class="form-control" placeholder="Search your favarite phone" >
+            <button class="btn btn-outline-secondary" type="button" id="buttonSearch" onclick="searchPhone()">Search-Phone</button>
+          </div>
+    </div>
+    <!-- show phone  -->
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="show-Phone">
+        <div class="col">
+          <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+  
+
 
     <!-- bootstrap link js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
