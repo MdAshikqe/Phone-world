@@ -72,7 +72,7 @@ const showDetails=data=>{
           <div class="col-md-8">
             <div class="card-body">
               <h5 class="card-title">${data.name}</h5>
-              <p class="card-text">Release Date: ${data.releaseDate}</p>
+              <p class="card-text">Release Date: ${data.releaseDate ? data.releaseDate:'No Release date found'}</p>
               <p class="card-text">Phone Storage: ${manufacring.storage}</p>
               <p class="card-text">Memory: ${manufacring.memory}</p>
               <p class="card-text">Display-Size: ${manufacring.displaySize}</p>
@@ -88,4 +88,6 @@ const showDetails=data=>{
     
 
 }
+
+
 
