@@ -1,7 +1,14 @@
 // input search
 
+//spinner added
+const showTogglesSpinner=displaySpinner=>{
+  document.getElementById('spnner-add').style.display=displaySpinner;
+}
   const searchPhone = ()=>{
-    const phone= document.getElementById('phoneField');
+    const phone = document.getElementById('phoneField');
+    // show spinner
+    showTogglesSpinner('block');
+    //--spinner
     const searchPhone= phone.value;
     phone.value="";
     
@@ -23,11 +30,12 @@
 // show Phone 
 const searchDisplay = phones =>{
    const serchPhones = document.getElementById('show-Phone');
-   if(phones.length == 0){
+   serchPhones.textContent='';
+   if(!phones){
     alert('Result not Found')
    }
-   serchPhones.textContent='';
-   phones.forEach(phone => {
+   
+   phones?.forEach(phone => {
     const div= document.createElement('div');
     div.classList.add('col');
     div.innerHTML=`
@@ -45,6 +53,7 @@ const searchDisplay = phones =>{
     serchPhones.appendChild(div);
     
    });
+   showTogglesSpinner('none')
 
 }
 
