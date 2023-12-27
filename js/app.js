@@ -1,17 +1,32 @@
 // input search
-const searchPhone = ()=>{
+
+  const searchPhone = ()=>{
     const phone= document.getElementById('phoneField');
     const searchPhone= phone.value;
     phone.value="";
-    const url= `https://openapi.programming-hero.com/api/phones?search=${searchPhone}`
-    fetch(url)
-    .then(res => res.json())
-    .then(json => searchDisplay(json.data))
+    
+    if(searchPhone === ''){
+      alert('Please write your favarite phone');
+    }
+    else{
+      const url= `https://openapi.programming-hero.com/api/phones?search=${searchPhone}`;
+      
+        fetch(url)
+        .then(res => res.json())
+        .then(json => searchDisplay(json.data))
+        
 
-}
+    }
+   
+  }
+
 // show Phone 
 const searchDisplay = phones =>{
    const serchPhones = document.getElementById('show-Phone');
+   if(phones.length == 0){
+    alert('Result not Found')
+   }
+   serchPhones.textContent='';
    phones.forEach(phone => {
     const div= document.createElement('div');
     div.classList.add('col');
@@ -44,7 +59,9 @@ fetch(url)
 const showDetails=data=>{
     console.log(data);
     const manufacring= data.mainFeatures;
+    const others= data.others;
     const getSinglePhone=document.getElementById('singlePhone');
+    getSinglePhone.textContent='';
     const div=document.createElement('div');
     div.innerHTML=`
     <div class="card mb-3 mx-auto" style="max-width: 540px;">
@@ -59,6 +76,9 @@ const showDetails=data=>{
               <p class="card-text">Phone Storage: ${manufacring.storage}</p>
               <p class="card-text">Memory: ${manufacring.memory}</p>
               <p class="card-text">Display-Size: ${manufacring.displaySize}</p>
+              <p class="card-text">Bluetooth: ${others.Bluetooth}</p>
+              <p class="card-text">WLAN: ${others.WLAN}</p>
+              <p class="card-text">USB: ${others.USB}</p>
             </div>
           </div>
         </div>
